@@ -14,6 +14,7 @@ import Subscribe from "./Components/Subscribe/Subscribe";
 import Aboutus from "./Components/OtherPages/Aboutus/Aboutus";
 import Service from "./Components/OtherPages/Service/Service";
 import Contact from "./Components/OtherPages/Contact/Contact";
+import Mentors from "./Components/Mentors/Mentors";
 
 const App = () => {
   React.useEffect(() => {
@@ -39,6 +40,7 @@ const App = () => {
               <Hero />
               <About />
               <Services />
+              <Mentors/>
               <Testimonials />
               <Subscribe />
             </>

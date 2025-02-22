@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import aboutImage from '../../Assets/aboutus/seminar.jpg'
+import { motion } from "framer-motion";
 import { GrUserExpert } from "react-icons/gr";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { GiOpenBook, GiNetworkBars } from "react-icons/gi";
@@ -18,8 +20,71 @@ const About = () => {
   }, []);
 
   return (
-    <div className="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white p-6 sm:p-12">
-      
+    <div className="bg-gray-100 text-gray-900 dark:text-white p-6 sm:p-12">
+      <section>
+      <div id="about" className="container mx-auto px-6 py-16 lg:py-24">
+      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        {/* Left: Image Section */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="lg:w-1/2 w-full"
+        >
+          <img
+            src={aboutImage}
+            alt="About MarbleSlab"
+            className="rounded-2xl shadow-lg w-full h-auto object-cover"
+          />
+        </motion.div>
+
+        {/* Right: Content Section */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="lg:w-1/2 w-full text-center lg:text-left"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
+            About <span className="text-blue-600">MarbleSlab</span>
+          </h2>
+          <p className="text-gray-600 mt-4 text-lg leading-relaxed">
+            MarbleSlab is an innovative organization dedicated to empowering
+            college students through insightful **Generative AI** workshops and
+            sessions. We collaborate with different colleges to foster a deeper
+            understanding of cutting-edge AI technologies.
+          </p>
+          <p className="text-gray-600 mt-4 text-lg leading-relaxed">
+            Our expert mentors bring industry experience, making learning more
+            engaging and practical. Join us in shaping the future of AI-driven
+            creativity!
+          </p>
+          
+          {/* Call to Action Buttons */}
+          <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="#workshops"
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition"
+            >
+              Join a Workshop
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="#contact"
+              className="px-6 py-3 bg-gray-200 text-gray-900 rounded-lg shadow-md hover:bg-gray-300 transition"
+            >
+              Contact Us
+            </motion.a>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+
+
+      </section>
       {/* Mission Statement */}
       <section className="text-center mb-12" data-aos="fade-up">
         <h2 className="text-4xl font-bold bg-gradient-to-r from-black via-gray-700 to-black text-transparent bg-clip-text">
