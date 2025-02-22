@@ -34,7 +34,7 @@ const App = () => {
 
       <Routes>
         <Route
-          path="/"
+          path="/Marbles-lab/"
           element={
             <>
               <Hero />
